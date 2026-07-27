@@ -6,17 +6,17 @@ from flask import render_template
 app = flask.Flask(__name__)
 
 conn = sqlite3.connect("school.db")
-cursor = conn.execute("SELECT ScreenName FROM People")
+cursor = conn.execute("SELECT ScreenName FROM People") # gets ScreenName from People database
 rows = cursor.fetchall()
 
 screen_names = []
-for row in rows:
+for row in rows: # creates a list of screen names
     screen_names.append(row)
 
 with open('people.txt', 'r') as file:
     file = file.read().strip().split("\n") # John Tan,2000-06-01,Person
     data = []
-    for i in range(len(file)):
+    for i in range(len(file)): # logic to add full name, screen names, and identity accordingly
         file[i] = file[i].split(',')
         data.append([file[i][0], screen_names[i][0], file[i][2]])
 

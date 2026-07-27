@@ -9,11 +9,11 @@ class Person:
         self.date_of_birth = birth
 
     def is_adult(self):
-        return 2026 - int(self.date_of_birth[0:4]) >= 18
+        return 2026 - int(self.date_of_birth[0:4]) >= 18 # checks whether it's above 18 or not
     def screen_name(self):
         full = ""
         for char in self.full_name:
-            if char.isalpha() == True:
+            if char.isalpha() == True: # logic to remove spaces, punctuations
                 full += char
         date = self.date_of_birth.split("-")
         return full + date[1] + date[2]        
@@ -26,7 +26,7 @@ print("")
 '''
 
 # for staff
-class Staff(Person):
+class Staff(Person): # inherits Person class
     def __init__(self, name, birth):
         super().__init__(name, birth)
     def is_adult(self):
@@ -46,7 +46,7 @@ print("")
 class Student(Person):
     def __init__(self, name, birth):
         super().__init__(name, birth)
-    def is_adult(self):
+    def is_adult(self): # sets to False by default
         return False
 '''
 student = Student("Nolan Tan", "2019-09-22")
@@ -63,14 +63,14 @@ with open('people.txt', 'r') as file:
         name = obj[0]
         DOB = obj[1]
         class_t = obj[2]
-        if class_t == "Person":
+        if class_t == "Person": # condition to check through what class type
             person = Person(name, DOB)
             screen_name = person.screen_name()
             is_adult = person.is_adult()
             connection.execute(
                 f'''
                 INSERT INTO People(FullName, DateOfBirth, ScreenName, IsAdult) VALUES(?, ?, ?, ?)
-                ''',
+                ''', # SQL logic to insert into database school.db
                 (name, DOB, screen_name, is_adult) # 
             )
         elif class_t == "Student":
