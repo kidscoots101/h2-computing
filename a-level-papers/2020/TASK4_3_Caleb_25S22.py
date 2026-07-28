@@ -13,7 +13,7 @@ screen_names = []
 for row in rows: # creates a list of screen names
     screen_names.append(row)
 
-with open('people.txt', 'r') as file:
+with open('people.txt', 'r') as file: # file closes automatically
     file = file.read().strip().split("\n") # John Tan,2000-06-01,Person
     data = []
     for i in range(len(file)): # logic to add full name, screen names, and identity accordingly

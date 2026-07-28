@@ -82,7 +82,7 @@ with open('people.txt', 'r') as file:
                 INSERT INTO People(FullName, DateOfBirth, ScreenName, IsAdult) VALUES(?, ?, ?, ?)
                 ''',
                 (name, DOB, screen_name, is_adult)
-            )           
+            )
 
         elif class_t == "Staff":
             staff = Staff(name, DOB)
