@@ -1,0 +1,15 @@
+<html>
+<h1 align="center">Cubicle Availability on {{ date }}</h1>
+<table style="width:200px;" border="1" align="center">
+    {% for c in cubicles %}
+        <tr>
+            <td align="left" style="font-weight: bold;">{{ c[0] }}</td>
+            {% if c[1]=="1" %}
+                <td align="center" style="font-weight: bold;">Available</td>
+            {% else %}
+                <td align="center" style="font-weight: bold;">Unavailable</td>
+            {% endif %}
+        </tr>
+    {% endfor %}
+</table>
+</html>
