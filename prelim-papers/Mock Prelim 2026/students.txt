@@ -1,0 +1,8 @@
+101,Aisha Rahman,CS1
+102,Ben Tan,CS1
+103,Chloe Lim,CS2
+104,Devraj Singh,CS2
+105,Elena Wong,CS3
+106,Farhan Yusof,CS3
+107,Grace Chen,CS1
+108,Harold Koh,CS2

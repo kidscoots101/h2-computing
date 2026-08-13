@@ -1,0 +1,10 @@
+chat-mini,34
+chat-pro,45
+code-helper,33
+image-fast,69
+image-max,75
+speech-lite,31
+summarise-1,94
+translate-2,30
+vision-small,72
+vision-ultra,39
